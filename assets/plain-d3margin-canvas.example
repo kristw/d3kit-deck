@@ -1,0 +1,18 @@
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 720 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// get resolution
+var r = window.devicePixelRatio;
+
+// append the canvas object to the body of the page
+var canvas = d3.select("body").append("canvas")
+  .attr("width", r * (width + margin.left + margin.right))
+  .attr("height", r * (height + margin.top + margin.bottom))
+  .style('width', width + margin.left + margin.right)
+  .style('height', height + margin.top + margin.bottom)
+
+var ctx = canvas.node().getContext('2d');
+ctx.scale(r, r);
+ctx.translate(margin.left, margin.top);

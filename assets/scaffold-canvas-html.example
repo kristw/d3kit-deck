@@ -1,0 +1,10 @@
+<!--chart.container is a D3 selection of this element.-->
+<body>
+  <!--chart.canvas is a D3 selection of this element.-->
+  <!--notice that width/height are handled
+  to ensure that it will look nice on retina display-->
+  <canvas
+    width="1440" height="1000"
+    style="width: 720px; height: 500px;"
+  />
+</body>

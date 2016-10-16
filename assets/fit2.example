@@ -1,0 +1,15 @@
+// make it fit container and watch for changes
+chart.fit({
+  width: '100%',
+  height: '200px'
+}, true); // listen to window.resize
+
+// make it fit container and watch for changes
+chart.fit({
+  mode: 'aspectRatio',
+  ratio: 16/9,
+}, {
+  type: 'polling',
+  target: chart.container.node(),
+  interval: 500
+});

@@ -1,0 +1,10 @@
+// setup <canvas> inside given container #chart
+// with D3 margin convention
+var chart = new d3Kit.CanvasChart('body', {
+  margin: {top: 20, right: 20, bottom: 30, left: 40},
+  initialWidth: 720,
+  initialHeight: 500,
+});
+
+// USAGE:
+// var ctx = chart.getContext2d();

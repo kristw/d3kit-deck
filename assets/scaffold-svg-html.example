@@ -1,0 +1,8 @@
+<!--chart.container is a D3 selection of this element.-->
+<body>
+  <!--chart.svg is a D3 selection of this element.-->
+  <svg width="960" height="500">
+    <!--chart.rootG is a D3 selection of this element.-->
+    <g transform="translate(30.5,30.5)"></g>
+  </svg>
+</body>

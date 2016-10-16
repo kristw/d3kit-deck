@@ -1,0 +1,11 @@
+// setup <svg> inside given container #chart
+// with D3 margin convention
+var chart = new d3Kit.SvgChart('body', {
+  margin: {top: 30, right: 30, bottom: 30, left: 30},
+  initialWidth: 960,
+  initialHeight: 500,
+  offset: { x: 0.5, y: 0.5 }
+});
+
+// USAGE:
+// chart.rootG.append(...)

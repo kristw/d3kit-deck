@@ -1,0 +1,11 @@
+// make it fit container once
+chart.fit({
+  width: '100%',
+  height: '200px'
+});
+
+// can also specify as aspect ratio
+chart.fit({
+  mode: 'aspectRatio',
+  ratio: 16/9
+});

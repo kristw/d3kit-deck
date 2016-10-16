@@ -1,0 +1,8 @@
+const chart = new SvgBubbleChart('#chart', {
+  margin: { top: 20 },
+  initialWidth: 300,
+  initialHeight: 300,
+})
+  .data(bubbles)
+  // handle bubbleClick event
+  .on('bubbleClick', d => { alert(JSON.stringify(d)); })
