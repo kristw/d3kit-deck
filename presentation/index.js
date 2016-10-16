@@ -28,9 +28,6 @@ import preloader from "spectacle/lib/utils/preloader";
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
-// Import custom component
-import Interactive from "../assets/interactive";
-
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
@@ -53,7 +50,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+        <Deck transition={["zoom", "fade"]} transitionDuration={500} progress="bar">
           <Slide transition={["zoom"]} bgColor="primary">
             <Link href="https://github.com/twitter/d3kit">
             <Heading textSize="6em" size={1} lineHeight={1} textColor="black">
@@ -62,6 +59,9 @@ export default class Presentation extends React.Component {
             </Link>
             <Heading size={1} fit caps>
               For reusable &amp; responsive chart
+            </Heading>
+            <Heading textSize="1.2em" margin="50px 0px 0px" size={1} lineHeight={1}>
+              @kristw &amp; @trebor
             </Heading>
             <Text textSize="1em" margin="70px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
           </Slide>
@@ -148,8 +148,39 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
+          <Slide>
+            <Heading caps fit size={1}>
+              Useful size functions
+            </Heading>
+            <Markdown>
+              {`
+  * \`chart.width([w])\` get/set total width
+  * \`chart.height([h])\` get/set total height
+  * \`chart.margin([m])\` get/set margin
+  * \`chart.getInnerWidth()\`
+  * \`chart.getInnerHeight()\`
+  * \`chart.fit(options, watch)\`
+  * \`chart.on('resize', listener)\`
+              `}
+            </Markdown>
+          </Slide>
+
+          <Slide>
+            <Heading caps fit size={1}>
+              Useful data functions
+            </Heading>
+            <Markdown>
+              {`
+  * \`chart.data([d])\`
+  * \`chart.options([o])\`
+  * \`chart.on('data', listener)\`
+  * \`chart.on('options', listener)\`
+              `}
+            </Markdown>
+          </Slide>
+
           <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading fit caps>Create a reusable chart</Heading>
+            <Heading fit caps>Create a reusable chart (1)</Heading>
             <CodePane
               lang="jsx"
               source={require("raw!../assets/reusable.example")}
@@ -158,7 +189,16 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading fit caps>Create a reusable chart</Heading>
+            <Heading fit caps>Create a reusable chart (2)</Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/visualizefn.example")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading fit caps>Create a reusable chart (3)</Heading>
             <CodePane
               lang="jsx"
               source={require("raw!../assets/reusable-use.example")}
@@ -184,15 +224,42 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
+          <Slide transition={["zoom", "fade"]} bgColor="primary">
+            <Heading caps fit>With plugins to framework</Heading>
+            <Layout>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  React
+                </Heading>
+                <CodePane
+                  lang="js"
+                  source={require("raw!../assets/react.example")}
+                  margin="0 0 0 -1px"
+                />
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  angular
+                </Heading>
+                <CodePane
+                  lang="js"
+                  source={require("raw!../assets/angular.example")}
+                  margin="0 0 0 1px"
+                />
+              </Fill>
+            </Layout>
+          </Slide>
+
+
           <Slide transition={["slide"]} bgColor="primary">
-            <Link href="https://github.com/twitter/d3kit">
+            <Link href="https://github.com/twitter/d3kit/tree/v3">
               <Heading size={1} fit textColor="tertiary">
-                github.com/twitter/d3kit
+                github.com/twitter/d3kit/tree/v3
               </Heading>
             </Link>
-            <Text textColor="tertiary">
+            <Heading textSize="1.2em" margin="50px 0px 0px" size={1} lineHeight={1}>
               @kristw &amp; @trebor
-            </Text>
+            </Heading>
           </Slide>
 
         </Deck>

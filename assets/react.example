@@ -1,0 +1,14 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// When PlainBubbleChart is a reusable chart written in d3Kit.
+import PlainBubbleChart from './PlainBubbleChart.js';
+import { createComponent } from 'react-d3kit';
+const BubbleChart = createComponent(PlainBubbleChart);
+
+ReactDOM.render(
+  <BubbleChart data={data} options={options} />,
+  document.getElementById('app')
+);
+
+// Note: This plugin needs to be updated for d3Kit v3.

@@ -1,0 +1,25 @@
+  visualize() {
+    if(!this.hasData() return;
+    const data = this.data();
+
+    this.xScale.domain(extent(data, d => d.x))
+      .range([0, this.getInnerWidth()]);
+    this.yScale.domain(extent(data, d => d.y))
+      .range([this.getInnerHeight(), 0]);
+
+    const selection = this.rootG.selectAll('circle')
+      .data(data);
+
+    selection.exit().remove();
+
+    const sEnter = selection.enter().append('circle')
+      .on('click', (...args) => {
+        this.dispatcher.apply('bubbleClick', this, args);
+      });
+
+    selection.merge(sEnter)
+      .attr('cx', d => this.xScale(d.x))
+      .attr('cy', d => this.yScale(d.y))
+      .attr('r', d => d.r)
+      .style('fill', (d,i) => this.color(i));
+  }

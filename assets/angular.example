@@ -1,0 +1,8 @@
+var d3KitAdapter = require('angular-d3kit-adapter');
+// When BubbleChart was written with d3Kit
+var BubbleChart = require('./BubbleChart');
+
+var module = angular.module('something',[]);
+d3KitAdapter.plug(module, 'bubbleChart', BubbleChart);
+
+// Note: This plugin needs to be updated for d3Kit v3.
