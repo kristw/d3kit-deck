@@ -250,6 +250,11 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading size={1} fit textColor="tertiary">
+              npm install d3 d3kit
+            </Heading>
+          </Slide>
 
           <Slide transition={["slide"]} bgColor="primary">
             <Link href="https://github.com/twitter/d3kit/tree/v3">
